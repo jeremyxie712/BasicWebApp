@@ -2,3 +2,9 @@ language: java
 jdk:
 - openjdk8
 script: mvn clean verify
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 21add325-041f-4d93-b459-be11a8f9fe20
+  app: haotiansb
