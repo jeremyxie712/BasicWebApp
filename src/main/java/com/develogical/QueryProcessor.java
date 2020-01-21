@@ -11,9 +11,7 @@ public class QueryProcessor {
                     "English poet, playwright, and actor, widely regarded as the greatest " +
                     "writer in the English language and the world's pre-eminent dramatist.";
         }
-//        if (query.toLowerCase().contains("86599200")){
-//            return "20802";
-//        }
+
         if (query.toLowerCase().contains("largest")){
             String new_query = query.toLowerCase();
             ArrayList<Integer> allMatches = new ArrayList<Integer>();
@@ -34,8 +32,10 @@ public class QueryProcessor {
             while (m.find()) {
                 allMatches.add(Integer.valueOf(m.group()));
             }
+
             Integer result = 0;
             for (Integer temp : allMatches) {
+                System.out.println(temp);
                 result += temp;
             }
             return String.valueOf(result);
