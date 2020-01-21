@@ -27,6 +27,7 @@ public class QueryProcessor {
 
         else if (query.toLowerCase().contains("plus")){
             String new_query = query.toLowerCase();
+            System.out.println(new_query);
             ArrayList<Integer> allMatches = new ArrayList<Integer>();
             Matcher m = Pattern.compile("[0-9]+")
                     .matcher(new_query);
