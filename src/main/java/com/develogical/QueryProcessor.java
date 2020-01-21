@@ -25,6 +25,21 @@ public class QueryProcessor {
          return String.valueOf(Collections.max(allMatches));
         }
 
+        else if (query.toLowerCase().contains("plus")){
+            String new_query = query.toLowerCase();
+            ArrayList<Integer> allMatches = new ArrayList<Integer>();
+            Matcher m = Pattern.compile("[0-9]+")
+                    .matcher(new_query);
+            while (m.find()) {
+                allMatches.add(Integer.valueOf(m.group()));
+            }
+            Integer result = 0;
+            for (Integer temp : allMatches) {
+                result += temp;
+            }
+            return String.valueOf(result);
+        }
+
         return "";
     }
 }
